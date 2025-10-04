@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Importación de los elementos necesarios de JavaFX -->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Contenedor principal de la vista, asociado a su controlador en Java -->
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.routeiq.controllers.CreateUserController"
+            prefWidth="700" prefHeight="600" style="-fx-background-color: #fcd9b0;">
+
+    <!-- VBox central que contiene todos los elementos de la interfaz -->
+    <VBox alignment="CENTER" spacing="15" prefWidth="600" prefHeight="450"
+          AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+        <children>
+
+            <!-- Sub VBox para alinear los campos del formulario verticalmente -->
+            <VBox alignment="TOP_CENTER" spacing="15" layoutX="40" layoutY="30" prefWidth="320">
+
+                <!-- Título de la pantalla -->
+                <Label text="Añadir usuario:" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+                <!-- Campos de entrada de datos -->
+                <TextField fx:id="emailField" promptText="ejem: correo@routeiq.es" />
+                <TextField fx:id="usernameField" promptText="ejem: NuevoUsuario" />
+                <PasswordField fx:id="passwordField" promptText="ejem: password" />
+                <PasswordField fx:id="confirmPasswordField" promptText="ejem: password" />
+
+                <!-- Selector de rol del usuario -->
+                <Label text="Rol:" />
+                <ComboBox fx:id="rolCombo" promptText="Selecciona un rol" />
+
+                <!-- Botón para crear usuario -->
+                <Button text="Crear usuario" onAction="#crearUsuario"
+                        style="-fx-background-color: #f15a07; -fx-text-fill: white; -fx-background-radius: 30;" />
+
+                <!-- Botón para volver al menú principal -->
+                <Button text="← Volver" onAction="#volverAlMenu"
+                        style="-fx-background-color: transparent; -fx-text-fill: black;" />
+            </VBox>
+        </children>
+    </VBox>
+</AnchorPane>

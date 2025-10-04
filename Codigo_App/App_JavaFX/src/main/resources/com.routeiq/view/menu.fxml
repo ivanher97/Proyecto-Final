@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.routeiq.controllers.MenuController"
+            prefWidth="700" prefHeight="600" style="-fx-background-color: #fcd9b0;">
+    <VBox alignment="CENTER" spacing="15" prefWidth="600" prefHeight="450" AnchorPane.topAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="30" layoutX="50.0" layoutY="20.0" prefWidth="500">
+
+                <!-- Logo superior-->
+                <ImageView fitWidth="400" preserveRatio="true">
+                    <image>
+                        <Image url="@/images/logo.png" />
+                    </image>
+                </ImageView>
+
+
+                <!-- Botones principales -->
+                <HBox spacing="50" alignment="CENTER">
+
+                    <VBox alignment="CENTER" spacing="10">
+                        <Button fx:id="buscarPlanosBtn" text="BUSCAR PLANOS" onAction="#buscarPlanos"
+                                prefWidth="240" prefHeight="60"
+                                style="-fx-background-color: #f15a07; -fx-text-fill: black; -fx-font-weight: bold;
+                                       -fx-font-size: 14px; -fx-border-radius: 20; -fx-background-radius: 20;" />
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="10">
+                        <Button fx:id="consultarDimensionesBtn" text="CONSULTAR DIMENSIONES" onAction="#consultarDimensiones"
+                                prefWidth="240" prefHeight="60"
+                                style="-fx-background-color: #f15a07; -fx-text-fill: black; -fx-font-weight: bold;
+                                       -fx-font-size: 14px; -fx-border-radius: 20; -fx-background-radius: 20;" />
+                    </VBox>
+                </HBox>
+
+                <!-- Botón para añadir usuario -->
+                <Button fx:id="crearUsuarioBtn" text="Añadir usuario" onAction="#irACrearUsuario"
+                        prefWidth="180" prefHeight="40"
+                        style="-fx-background-color: #f15a07; -fx-text-fill: white;
+                               -fx-background-radius: 30; -fx-border-radius: 30;" />
+
+                <!-- Botón de salir -->
+                <Button text="Salir" onAction="#salir"
+                        prefWidth="120" prefHeight="40"
+                        style="-fx-background-color: #f15a07; -fx-text-fill: black;
+                               -fx-background-radius: 30; -fx-border-radius: 30;" />
+            </VBox>
+        </children>
+    </VBox>
+</AnchorPane>

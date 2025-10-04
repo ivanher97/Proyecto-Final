@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.routeiq.controllers.DimensionConsultController"
+            prefWidth="700" prefHeight="600" style="-fx-background-color: #fcd9b0;">
+    <VBox alignment="CENTER" spacing="15" prefWidth="600" prefHeight="450" AnchorPane.topAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+
+        <children>
+
+            <!-- Logo superior-->
+            <ImageView fitWidth="300" preserveRatio="true">
+                <image>
+                    <Image url="@/images/logo.png" />
+                </image>
+            </ImageView>
+
+            <!-- Botón volver -->
+            <Button layoutX="665" layoutY="20" text="←" onAction="#volver"
+                    style="-fx-font-size: 18px; -fx-background-color: #f15a07; -fx-text-fill: white;" />
+
+            <!-- Contenedor principal -->
+            <VBox layoutY="70" alignment="TOP_CENTER" prefWidth="720" spacing="12"
+                  AnchorPane.topAnchor="70.0" AnchorPane.leftAnchor="20.0"
+                  AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="10.0">
+
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+
+                <!-- Título -->
+                <Label text="Búsqueda dimensiones" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+                <!-- Formulario en GridPane -->
+                <GridPane hgap="20" vgap="10" alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <!-- Primera columna -->
+                    <Label text="Carretera principal:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="carreteraPrincipalField" promptText="Ejem: A-7, N-12..." GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+
+                    <Label text="Carretera destino:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="carreteraDestinoField" promptText="Ej: 305-307..." GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+
+                    <Label text="Punto kilométrico:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <TextField fx:id="puntoKilometricoField" promptText="pk 500..." GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+
+                    <!-- Segunda columna -->
+                    <Label text="Dirección:" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    <ComboBox fx:id="direccionField" promptText="norte, sur, este u oeste" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Tipo:" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    <ComboBox fx:id="tipoCombo" promptText="Selecciona tipo" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Largo:" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    <TextField fx:id="largoField" promptText="75.00, 25.5... (crear)" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                    <Label text="Ancho:" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                    <TextField fx:id="anchoField" promptText="4.50, 6.00... (crear)" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <!-- Botones alineados -->
+                <HBox spacing="20" alignment="CENTER">
+                    <Button text="Buscar dimensiones" onAction="#buscarDimensiones"
+                            style="-fx-background-color: #f15a07; -fx-text-fill: white; -fx-background-radius: 30;" />
+                    <Button text="Crear registro" onAction="#crearRegistro"
+                            style="-fx-background-color: #f15a07; -fx-text-fill: white; -fx-background-radius: 30;" />
+                    <Button fx:id="actualizarBtn" text="Actualizar medidas" onAction="#actualizarMedidas"
+                            style="-fx-background-color: #f15a07; -fx-text-fill: white; -fx-background-radius: 30;" />
+                </HBox>
+
+                <!-- Tabla resultados -->
+                <TableView fx:id="tablaResultados" prefHeight="500" prefWidth="600">
+                    <columns>
+                        <TableColumn fx:id="colLargo" text="Largo" prefWidth="100" />
+                        <TableColumn fx:id="colAncho" text="Ancho" prefWidth="100" />
+                        <TableColumn fx:id="colNombrePlano" text="Nombre plano" prefWidth="300" />
+                        <TableColumn fx:id="colFecha" text="Fecha" prefWidth="160" />
+                    </columns>
+                </TableView>
+
+            </VBox>
+
+        </children>
+    </VBox>
+</AnchorPane>

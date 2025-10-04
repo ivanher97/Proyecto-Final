@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.routeiq.controllers.LoginController"
+            prefWidth="700.0" prefHeight="600.0" style="-fx-background-color: #fcd9b0;">
+    <VBox alignment="CENTER" spacing="15" prefWidth="600" prefHeight="450" AnchorPane.topAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+
+        <children>
+            <VBox alignment="CENTER" spacing="10" layoutX="30.0" layoutY="30.0" prefWidth="340">
+                <!-- Logo superior-->
+                <ImageView fitWidth="400" preserveRatio="true">
+                    <image>
+                        <Image url="@/images/logo.png" />
+                    </image>
+                </ImageView>
+
+                <VBox spacing="5" alignment="CENTER">
+                    <Label text="Nombre de usuario:" />
+                    <TextField fx:id="usernameField" prefWidth="280" style="-fx-background-color: lightgray;" />
+
+                    <Label text="Contraseña:" />
+                    <PasswordField fx:id="passwordField" prefWidth="280" style="-fx-background-color: lightgray;" />
+                </VBox>
+
+                <Button text="Iniciar sesión" onAction="#onLoginClick"
+                        style="-fx-background-color: #f15a07; -fx-text-fill: white; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: black;" />
+
+                <Hyperlink text="Cambiar contraseña"
+                           style="-fx-text-fill: black; -fx-underline: true;" />
+            </VBox>
+        </children>
+    </VBox>
+</AnchorPane>
